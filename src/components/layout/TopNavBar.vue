@@ -4,7 +4,7 @@
 
     <!-- 电脑导航栏 -->
     <div class="nav-container">
-      <div class="float-left blog-title">
+      <div class="float-left blog-title animated fadeIn">
         <router-link to="/"> 兰兰兔 </router-link>
       </div>
       <div class="float-right nav-title">
@@ -111,7 +111,6 @@ ul {
   list-style: none;
 }
 
-
 .nav-container {
   font-size: 14px;
   width: 100%;
@@ -195,6 +194,11 @@ ul {
   background: #4ab1f4;
 }
 
+.fadeIn {
+  animation-duration: 1.8s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
 @keyframes submenu {
   0% {
     opacity: 0;
