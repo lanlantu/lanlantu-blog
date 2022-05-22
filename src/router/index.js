@@ -8,6 +8,10 @@ const routes = [
     path: "/",
     component: resolve => require(["../views/home/Home.vue"], resolve)
   },
+  {
+    path: "/login",
+    component: resolve => require(["../components/model/LoginModel.vue"], resolve)
+  }
   
 ];
 

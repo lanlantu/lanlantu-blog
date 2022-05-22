@@ -4,7 +4,6 @@
      <v-main>
       <router-view :key="$route.fullPath" />
     </v-main>
-    
     <Footer/>
   </v-app>
 </template>

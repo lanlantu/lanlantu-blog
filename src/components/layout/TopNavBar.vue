@@ -12,7 +12,7 @@
           <a class="menu-btn"> <i class="iconfont iconsousuo" /> 搜索 </a>
         </div>
         <div class="menus-item">
-          <router-link class="menu-btn" to="/">
+          <router-link class="menu-btn" to="/login">
             <i class="iconfont iconzhuye" /> 首页
           </router-link>
         </div>

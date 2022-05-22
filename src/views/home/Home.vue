@@ -35,11 +35,11 @@
         </div>
       </div>
       <!-- 向下滚动 -->
-      <!-- <div class="scroll-down" @click="scrollDown">
+      <div class="scroll-down" @click="scrollDown">
         <v-icon color="#fff" class="scroll-down-effects">
-         aiaiai 
+          mdi-chevron-down 
         </v-icon>
-      </div> -->
+      </div>
     </div>
     
   </div>
@@ -47,6 +47,7 @@
 
 <script>
 export default {
+  
 
 data() {
   return {
@@ -61,7 +62,12 @@ computed: {
     },
 },
 methods:{
- 
+     scrollDown() {
+      window.scrollTo({
+        behavior: "smooth",
+        top: document.documentElement.clientHeight
+      });
+    },
 }
 }
 </script>
