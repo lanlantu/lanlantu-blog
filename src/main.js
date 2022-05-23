@@ -3,7 +3,9 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import router from "./router";
 import store from "./store";
-import axios from "@/axios/axios";
+import axios from "axios";
+import VueAxios from 'vue-axios';
+import InfiniteLoading from "vue-infinite-loading";
 
 
 import Toast from "./components/toast/index";
@@ -14,7 +16,23 @@ import "./assets/css/index.css";
 
 Vue.config.productionTip = false
 Vue.use(Toast);
-Vue.prototype.$axios = axios;
+Vue.use(VueAxios,axios);
+
+Vue.use(InfiniteLoading);
+
+
+axios.interceptors.response.use(
+  function(response) {
+    switch (response.data.code) {
+      case 50000:
+        Vue.prototype.$toast({ type: "error", message: "系统异常" });
+    }
+    return response;
+  },
+  function(error) {
+    return Promise.reject(error);
+  }
+);
 
 new Vue({
   router,

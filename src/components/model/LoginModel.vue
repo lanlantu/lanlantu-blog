@@ -54,7 +54,7 @@ export default {
           let param = new URLSearchParams();
           param.append("username", that.username);
           param.append("password", that.password);
-          that.$axios.post("/api/login", param).then(( data ) => {
+          that.axios.post("/api/login", param).then(( data ) => {
             console.log(data);
 
             if (data.code==200) {

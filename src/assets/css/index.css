@@ -16,3 +16,17 @@ ul{
 a{
   text-decoration: none;
 }
+
+/* 头部图片平滑过过度效果 */
+@keyframes header-effect{
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0);
+  }
+}
