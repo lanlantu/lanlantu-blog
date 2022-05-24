@@ -264,6 +264,7 @@ export default {
   },
   created() {
     this.getArticle();
+
   },
   destroyed() {
     this.clipboard.destroy();
