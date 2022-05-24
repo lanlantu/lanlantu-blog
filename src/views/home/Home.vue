@@ -7,8 +7,7 @@
         <h1 class="blog-title animated zoomIn">兰兰兔</h1>
         <!-- 一言 -->
         <div class="blog-intro">
-          尊严只在剑锋之上，真理只在大炮射程之内
-          <span class="typed-cursor">|</span>
+          {{ obj.output }} <span class="typed-cursor">|</span>
         </div>
         <!-- 窗口小于760px或手机端显示联系方式 -->
         <div class="blog-contact">
@@ -41,6 +40,10 @@
     <!-- 主页文章 -->
     <v-row class="home-container">
       <v-col md="9" cols="12">
+        <!-- 说说轮播 -->
+        <v-card class="animated zoomIn" v-if="talkList.length > 0">
+          <swiper :list="talkList" />
+        </v-card>
         <v-card
           class="animated zoomIn article-card"
           style="border-radius: 12px 8px 8px 12px"
@@ -191,18 +194,17 @@
             </div>
           </v-card>
 
-
-               <!-- 网站信息 -->
+          <!-- 网站信息 -->
           <v-card class="blog-card animated zoomIn mt-5">
             <div class="web-info-title">
               <v-icon size="18">mdi-chart-line</v-icon>
               网站资讯
             </div>
             <div class="web-info">
-              <div style="padding:4px 0 0">
+              <div style="padding: 4px 0 0">
                 运行时间:<span class="float-right">{{ time }}</span>
               </div>
-              <div style="padding:4px 0 0">
+              <div style="padding: 4px 0 0">
                 总访问量:<span class="float-right">
                   {{ blogInfo.viewsCount }}
                 </span>
@@ -216,13 +218,27 @@
 </template>
 
 <script>
+import Swiper from "@/components/Swiper.vue";
+import EasyTyper from "easy-typer-js";
 export default {
+  components: { Swiper },
   data() {
     return {
+      obj: {
+        output: "",
+        isEnd: false,
+        speed: 300,
+        singleBack: false,
+        sleep: 0,
+        type: "rollback",
+        backSpeed: 40,
+        sentencePause: true,
+      },
       show: false,
       time: "",
       articleList: [],
       current: 1,
+      talkList: [],
     };
   },
   computed: {
@@ -254,9 +270,34 @@ export default {
     },
   },
   created() {
-      this.timer = setInterval(this.runTime, 1000);
+    this.init();
+    this.listHomeTalks();
+    this.timer = setInterval(this.runTime, 1000);
   },
   methods: {
+    //初始化
+    init() {
+      document.title = this.blogInfo.websiteConfig.websiteName;
+      // 一言Api进行打字机循环输出效果
+      fetch("https://v1.hitokoto.cn?c=i")
+        .then((res) => {
+          return res.json();
+        })
+        .then(({ hitokoto }) => {
+          this.initTyped(hitokoto);
+        });
+    },
+    listHomeTalks() {
+      this.axios.get("/api/home/talks").then(({ data }) => {
+        console.log("hahahha $O",data);
+        this.talkList = data.data;
+      });
+    },
+    initTyped(input, fn, hooks) {
+      const obj = this.obj;
+      // eslint-disable-next-line no-unused-vars
+      const typed = new EasyTyper(obj, input, fn, hooks);
+    },
     scrollDown() {
       window.scrollTo({
         behavior: "smooth",
@@ -290,7 +331,7 @@ export default {
           }
         });
     },
-   runTime() {
+    runTime() {
       var timeold =
         new Date().getTime() -
         new Date(this.blogInfo.websiteConfig.websiteCreateTime).getTime();
@@ -304,8 +345,6 @@ export default {
       str += day.getSeconds() + "秒";
       this.time = str;
     },
-
-
   },
 };
 </script>
