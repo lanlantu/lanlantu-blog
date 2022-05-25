@@ -5,7 +5,7 @@
       <h1 class="banner-title">分类</h1>
     </div>
     <!-- 分类列表 -->
-    <v-card class="blog-container">
+    <v-card class="blog-container" >
       <div class="category-title">分类 - {{ count }}</div>
       <ul class="category-list">
         <li

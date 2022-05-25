@@ -4,6 +4,7 @@
     <v-main>
       <router-view :key="$route.fullPath" />
     </v-main>
+    <login-model/>
     <Footer />
   </v-app>
 </template>
@@ -11,12 +12,14 @@
 <script>
 import Footer from "./components/layout/Footer.vue";
 import TopNavBar from "./components/layout/TopNavBar.vue";
+import LoginModel from './components/model/LoginModel.vue';
 export default {
   name: "App",
 
   components: {
     TopNavBar,
     Footer,
+    LoginModel,
   },
   created() {
     // 获取博客信息
