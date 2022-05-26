@@ -28,6 +28,17 @@ const routes = [
     }
   },
   {
+    path: "/albums",
+    component: resolve => require(["../views/album/Album.vue"], resolve),
+    meta: {
+      title: "相册"
+    }
+  },
+  {
+    path: "/albums/:albumId",
+    component: resolve => require(["../views/album/Photo.vue"], resolve)
+  },
+  {
     path: "/login",
     component: resolve => require(["../components/model/LoginModel.vue"], resolve)
   }

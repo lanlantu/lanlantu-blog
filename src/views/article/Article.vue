@@ -2,7 +2,6 @@
   <div>
     <div class="banner" :style="articleCover">hahah</div>
     <v-row class="article-container">
-      就啊哈哈
            <article
             id="write"
             class="article-content markdown-body"
