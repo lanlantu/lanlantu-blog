@@ -8,6 +8,9 @@ import VueAxios from 'vue-axios';
 import InfiniteLoading from "vue-infinite-loading";
 import dayjs from "dayjs";
 
+import VueImageSwipe from "vue-image-swipe";
+import "vue-image-swipe/dist/vue-image-swipe.css";
+
 import Toast from "./components/toast/index";
 import 'animate.css';
 import "./assets/css/iconfont.css";
@@ -18,6 +21,7 @@ import "./assets/css/markdown.css";
 Vue.config.productionTip = false
 Vue.use(Toast);
 Vue.use(VueAxios,axios);
+Vue.use(VueImageSwipe);
 
 Vue.use(InfiniteLoading);
 

@@ -26,9 +26,9 @@ export default {
   created() {
     this.listPhotoAlbums();
   },
-  data: function() {
+  data: function () {
     return {
-      photoAlbumList: []
+      photoAlbumList: [],
     };
   },
   methods: {
@@ -36,19 +36,19 @@ export default {
       this.axios.get("/api/photos/albums").then(({ data }) => {
         this.photoAlbumList = data.data;
       });
-    }
+    },
   },
   computed: {
     cover() {
       var cover = "";
-      this.$store.state.blogInfo.pageList.forEach(item => {
+      this.$store.state.blogInfo.pageList.forEach((item) => {
         if (item.pageLabel == "album") {
           cover = item.pageCover;
         }
       });
       return "background: url(" + cover + ") center center / cover no-repeat";
-    }
-  }
+    },
+  },
 };
 </script>
 

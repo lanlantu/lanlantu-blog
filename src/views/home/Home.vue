@@ -105,7 +105,7 @@
         </v-card>
         <!-- 无限加载 -->
         <infinite-loading @infinite="infiniteHandler">
-          <div slot="no-more" />
+          <div slot="no-more" style="margin: 30px">没有更多数据(⊙o⊙)？</div>
         </infinite-loading>
       </v-col>
       <v-col md="3" cols="12">
