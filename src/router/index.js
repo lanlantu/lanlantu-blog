@@ -39,6 +39,28 @@ const routes = [
     component: resolve => require(["../views/album/Photo.vue"], resolve)
   },
   {
+    path: "/talks",
+    component: resolve => require(["../views/talk/Talk.vue"], resolve),
+    meta: {
+      title: "说说"
+    }
+  },
+  {
+    path: "/talks/:talkId",
+    component: resolve => require(["../views/talk/TalkInfo.vue"], resolve),
+    meta: {
+      title: "说说"
+    }
+  },
+
+  {
+    path: "/message",
+    component: resolve => require(["../views/message/Message.vue"], resolve),
+    meta: {
+      title: "留言板"
+    }
+  },
+  {
     path: "/login",
     component: resolve => require(["../components/model/LoginModel.vue"], resolve)
   }

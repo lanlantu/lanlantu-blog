@@ -1,5 +1,5 @@
 <template>
-  <v-footer app padless absolute v-if="true">
+  <v-footer app padless absolute v-if="!this.isMessage">
     <div class="footer-wrap">
       <div>
         {{ new Date().getFullYear() }} By

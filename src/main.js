@@ -11,6 +11,8 @@ import dayjs from "dayjs";
 import VueImageSwipe from "vue-image-swipe";
 import "vue-image-swipe/dist/vue-image-swipe.css";
 
+import { vueBaberrage } from "vue-baberrage";
+
 import Toast from "./components/toast/index";
 import 'animate.css';
 import "./assets/css/iconfont.css";
@@ -22,6 +24,7 @@ Vue.config.productionTip = false
 Vue.use(Toast);
 Vue.use(VueAxios,axios);
 Vue.use(VueImageSwipe);
+Vue.use(vueBaberrage);
 
 Vue.use(InfiniteLoading);
 
