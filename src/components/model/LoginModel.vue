@@ -118,9 +118,10 @@ export default {
       }
       const that = this;
       // eslint-disable-next-line no-undef
-      var captcha = new TencentCaptcha(this.config.TENCENT_CAPTCHA, function(
+      var captcha = new TencentCaptcha("1234567890", function(
         res
       ) {
+        console.log(res);
         if (res.ret === 0) {
           //发送登录请求
           let param = new URLSearchParams();

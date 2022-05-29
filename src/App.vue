@@ -28,13 +28,13 @@ export default {
     // 获取博客信息
     this.getBlogInfo();
 
-    // 首次加载完成后移除动画
-    // let loadDOM = document.querySelector("#appLoading");
-    // if (loadDOM) {
-    //   setTimeout(() => {
-    //     document.body.removeChild(loadDOM);
-    //   }, 2000);
-    // }
+    //首次加载完成后移除动画
+    let loadDOM = document.querySelector("#appLoading");
+    if (loadDOM) {
+      setTimeout(() => {
+        document.body.removeChild(loadDOM);
+      }, 1000);
+    }
   },
   methods: {
     getBlogInfo() {

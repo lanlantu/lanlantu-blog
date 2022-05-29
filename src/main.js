@@ -13,13 +13,15 @@ import "vue-image-swipe/dist/vue-image-swipe.css";
 
 import { vueBaberrage } from "vue-baberrage";
 
+import config from "./assets/js/config";
+
 import Toast from "./components/toast/index";
 import 'animate.css';
 import "./assets/css/iconfont.css";
 import "./assets/css/index.css";
 import "./assets/css/markdown.css";
 
-
+Vue.prototype.config = config;
 Vue.config.productionTip = false
 Vue.use(Toast);
 Vue.use(VueAxios,axios);
