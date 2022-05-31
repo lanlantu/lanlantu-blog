@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- 弹幕列表 -->
-      <div class="barrage-container">
+<!--       <div class="barrage-container">
         <vue-baberrage :barrageList="barrageList">
           <template v-slot:default="slotProps">
             <span class="barrage-items">
@@ -37,7 +37,7 @@
             </span>
           </template>
         </vue-baberrage>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
