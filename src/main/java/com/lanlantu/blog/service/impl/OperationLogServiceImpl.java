@@ -1,26 +1,25 @@
-package com.mayikt.service.impl;
+package com.lanlantu.blog.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mayikt.dao.OperationLogDao;
-import com.mayikt.entity.OperationLog;
-import com.mayikt.service.OperationLogService;
-import com.mayikt.util.BeanCopyUtils;
-import com.mayikt.util.PageUtils;
-import com.mayikt.vo.ConditionVO;
-import com.mayikt.vo.OperationLogDTO;
-import com.mayikt.vo.PageResult;
+import com.lanlantu.blog.dao.OperationLogDao;
+import com.lanlantu.blog.entity.OperationLog;
+import com.lanlantu.blog.service.OperationLogService;
+import com.lanlantu.blog.util.BeanCopyUtils;
+import com.lanlantu.blog.util.PageUtils;
+import com.lanlantu.blog.vo.ConditionVO;
+import com.lanlantu.blog.vo.OperationLogDTO;
+import com.lanlantu.blog.vo.PageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * 操作日志服务
- *
- * @author yezhiqiu
- * @date 2021/08/08
+ * @version 1.0
+ * @Author lanlantu
+ * @Date 2022/6/2 22:34
  */
 @Service
 public class OperationLogServiceImpl extends ServiceImpl<OperationLogDao, OperationLog> implements OperationLogService {

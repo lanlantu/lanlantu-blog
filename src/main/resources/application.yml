@@ -1,0 +1,18 @@
+server:
+  port: 8989
+
+spring:
+  datasource:
+    url:  jdbc:mysql://localhost:3306/blog?userUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 584520
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  global-config:
+#    db-config:
+#      logic-delete-field: isDeletestr #全局逻辑删除实体类字段
+#      logic-delete-value: 1  #逻辑删除（默认为1）
+#      logic-not-delete-value: 0 # 逻辑未删除（默认为0）

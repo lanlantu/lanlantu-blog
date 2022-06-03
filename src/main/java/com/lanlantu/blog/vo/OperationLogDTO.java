@@ -1,4 +1,4 @@
-package com.mayikt.vo;
+package com.lanlantu.blog.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 /**
  * 操作日志
  *
- * @author yezhiqiu
- * @date 2021/08/01
+ * @author lanlantu
+ * @date 2022/6/2 16:31
  */
 @Data
 @Builder

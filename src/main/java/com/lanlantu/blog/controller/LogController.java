@@ -1,10 +1,10 @@
-package com.mayikt.controller;
+package com.lanlantu.blog.controller;
 
-import com.mayikt.service.OperationLogService;
-import com.mayikt.vo.ConditionVO;
-import com.mayikt.vo.OperationLogDTO;
-import com.mayikt.vo.PageResult;
-import com.mayikt.vo.Result;
+import com.lanlantu.blog.service.OperationLogService;
+import com.lanlantu.blog.vo.ConditionVO;
+import com.lanlantu.blog.vo.OperationLogDTO;
+import com.lanlantu.blog.vo.PageResult;
+import com.lanlantu.blog.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * 日志控制器
- *
- * @author yezhiqiu
- * @date 2021/07/27
+ * @version 1.0
+ * @Author lanlantu
+ * @Date 2022/6/2 22:34
  */
 @RestController
 public class LogController {

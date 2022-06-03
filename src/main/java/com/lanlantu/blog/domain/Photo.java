@@ -1,4 +1,4 @@
-package com.mayikt.domain;
+package com.lanlantu.blog.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

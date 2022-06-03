@@ -1,4 +1,4 @@
-package com.mayikt.util;
+package com.lanlantu.blog.util;
 
 
 
@@ -8,8 +8,8 @@ import java.util.List;
 /**
  * 复制对象或集合属性
  *
- * @author yezhiqiu
- * @date 2021/08/10
+ * @author lanlantu
+ * @date 2022/6/2 16:31
  */
 public class BeanCopyUtils {
 

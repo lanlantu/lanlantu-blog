@@ -1,16 +1,16 @@
-package com.mayikt.vo;
+package com.lanlantu.blog.vo;
 
-import com.mayikt.enums.StatusCodeEnum;
+import com.lanlantu.blog.enums.StatusCodeEnum;
 import lombok.Data;
 
-import static com.mayikt.enums.StatusCodeEnum.FAIL;
-import static com.mayikt.enums.StatusCodeEnum.SUCCESS;
+import static com.lanlantu.blog.enums.StatusCodeEnum.FAIL;
+import static com.lanlantu.blog.enums.StatusCodeEnum.SUCCESS;
 
 /**
  * 接口返回类
  *
- * @author yezhiqiu
- * @date 2021/08/10
+ * @author lanlantu
+ * @date 2022/6/2 16:31
  */
 @Data
 public class Result<T> {

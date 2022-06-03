@@ -1,16 +1,16 @@
-package com.mayikt.dao;
+package com.lanlantu.blog.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mayikt.entity.OperationLog;
+import com.lanlantu.blog.entity.OperationLog;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 
 /**
- * 操作日志
- *
- * @author yezhiqiu
- * @date 2021/08/10
+ * @version 1.0
+ * @Author lanlantu
+ * @Date 2022/6/2 22:34
  */
-@Repository
+@Mapper
 public interface OperationLogDao extends BaseMapper<OperationLog> {
 }

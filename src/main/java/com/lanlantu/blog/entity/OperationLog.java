@@ -1,4 +1,4 @@
-package com.mayikt.entity;
+package com.lanlantu.blog.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 /**
- * 操作日志
- *
- * @author yezhiqiu
- * @date 2021/08/01
+ * @version 1.0
+ * @Author lanlantu
+ * @Date 2022/6/2 22:34
  */
 @Data
 @Builder

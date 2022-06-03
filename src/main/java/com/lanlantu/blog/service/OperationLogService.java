@@ -1,16 +1,15 @@
-package com.mayikt.service;
+package com.lanlantu.blog.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.mayikt.entity.OperationLog;
-import com.mayikt.vo.ConditionVO;
-import com.mayikt.vo.OperationLogDTO;
-import com.mayikt.vo.PageResult;
+import com.lanlantu.blog.entity.OperationLog;
+import com.lanlantu.blog.vo.ConditionVO;
+import com.lanlantu.blog.vo.OperationLogDTO;
+import com.lanlantu.blog.vo.PageResult;
 
 /**
- * 操作日志服务
- *
- * @author yezhiqiu
- * @date 2021/07/29
+ * @version 1.0
+ * @Author lanlantu
+ * @Date 2022/6/2 22:34
  */
 public interface OperationLogService extends IService<OperationLog> {
 

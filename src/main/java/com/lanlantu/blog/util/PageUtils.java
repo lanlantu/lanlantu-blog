@@ -1,4 +1,4 @@
-package com.mayikt.util;
+package com.lanlantu.blog.util;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
@@ -7,8 +7,8 @@ import java.util.Objects;
 /**
  * 分页工具类
  *
- * @author yezhqiu
- * @date 2021/07/18
+ * @author lanlantu
+ * @date 2022/6/2 16:31
  * @since 1.0.0
  **/
 public class PageUtils {

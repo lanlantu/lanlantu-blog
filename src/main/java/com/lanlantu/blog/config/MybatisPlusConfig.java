@@ -1,9 +1,10 @@
-package com.mayikt.config;
+package com.lanlantu.blog.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @Author lanlantu
  * @Date 2022/6/2 22:34
  */
+@MapperScan("com.lanlantu.blog.dao")
 @Configuration
 public class MybatisPlusConfig {
 
