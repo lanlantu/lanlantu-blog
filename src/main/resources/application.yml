@@ -1,5 +1,5 @@
 server:
-  port: 8989
+  port: 9999
 
 spring:
   datasource:
@@ -10,6 +10,10 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+  security:
+    user:
+      name: root
+      password: 123
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
