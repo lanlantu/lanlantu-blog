@@ -15,6 +15,7 @@ public class UserUtils {
      * @return 用户登录信息
      */
     public static UserDetailDTO getLoginUser() {
+        System.out.println("======="+SecurityContextHolder.getContext());
         return (UserDetailDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 

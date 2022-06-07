@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface UserAuthDao extends BaseMapper<UserAuth> {
+public interface UserAuthMapper extends BaseMapper<UserAuth> {
 
 
 }

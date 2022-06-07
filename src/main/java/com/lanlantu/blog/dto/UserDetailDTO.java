@@ -12,17 +12,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
 /**
- * 用户信息
- *
- * @author yezhiqiu
- * @date 2021/08/10
+ * @version 1.0
+ * @Author lanlantu
+ * @Date 2022/6/6 23:59
  */
 @Data
 @Builder
 public class UserDetailDTO implements UserDetails {
-
     /**
      * 用户账号id
      */
@@ -123,12 +120,9 @@ public class UserDetailDTO implements UserDetails {
      */
     private LocalDateTime lastLoginTime;
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.roleList.stream()
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toSet());
+        return this.roleList.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toSet());
     }
 
     @Override
@@ -160,5 +154,4 @@ public class UserDetailDTO implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }

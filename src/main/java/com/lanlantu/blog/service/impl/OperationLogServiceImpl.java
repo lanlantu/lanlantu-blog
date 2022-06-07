@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lanlantu.blog.dao.OperationLogDao;
+import com.lanlantu.blog.dao.OperationLogMapper;
 import com.lanlantu.blog.entity.OperationLog;
 import com.lanlantu.blog.service.OperationLogService;
 import com.lanlantu.blog.util.BeanCopyUtils;
@@ -22,7 +22,7 @@ import java.util.List;
  * @Date 2022/6/2 22:34
  */
 @Service
-public class OperationLogServiceImpl extends ServiceImpl<OperationLogDao, OperationLog> implements OperationLogService {
+public class OperationLogServiceImpl extends ServiceImpl<OperationLogMapper, OperationLog> implements OperationLogService {
 
     @Override
     public PageResult<OperationLogDTO> listOperationLogs(ConditionVO conditionVO) {

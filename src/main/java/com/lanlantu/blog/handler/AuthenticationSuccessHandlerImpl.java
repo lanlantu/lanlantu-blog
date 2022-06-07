@@ -26,8 +26,8 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         // 返回登录信息
-//        UserInfoDTO userLoginDTO = BeanCopyUtils.copyObject(UserUtils.getLoginUser(), UserInfoDTO.class);
+        UserInfoDTO userLoginDTO = BeanCopyUtils.copyObject(UserUtils.getLoginUser(), UserInfoDTO.class);
         response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(JSON.toJSONString(Result.ok(SecurityContextHolder.getContext())));
+        response.getWriter().write(JSON.toJSONString(Result.ok(userLoginDTO)));
     }
 }
