@@ -1,4 +1,4 @@
-package com.lanlantu.blog.vo;
+package com.lanlantu.blog.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ConditionVO {
+public class ConditionDTO {
     /**
      * 页码
      */

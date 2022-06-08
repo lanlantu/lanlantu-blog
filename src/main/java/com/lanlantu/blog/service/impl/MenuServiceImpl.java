@@ -2,8 +2,8 @@ package com.lanlantu.blog.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lanlantu.blog.dao.MenuDao;
-import com.lanlantu.blog.dto.UserMenuDTO;
+import com.lanlantu.blog.dao.MenuMapper;
+import com.lanlantu.blog.vo.UserMenuVO;
 import com.lanlantu.blog.entity.Menu;
 import com.lanlantu.blog.service.MenuService;
 import com.lanlantu.blog.util.BeanCopyUtils;
@@ -16,17 +16,17 @@ import java.util.stream.Collectors;
 
 
 @Service
-public class MenuServiceImpl extends ServiceImpl<MenuDao, Menu> implements MenuService {
+public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements MenuService {
     @Autowired
-    private MenuDao menuDao;
+    private MenuMapper menuMapper;
 
 
 
 
     @Override
-    public List<UserMenuDTO> listUserMenus() {
+    public List<UserMenuVO> listUserMenus() {
         // 查询用户菜单信息
-        List<Menu> menuList = menuDao.listMenusByUserInfoId(UserUtils.getLoginUser().getUserInfoId());
+        List<Menu> menuList = menuMapper.listMenusByUserInfoId(UserUtils.getLoginUser().getUserInfoId());
         // 获取目录列表
         List<Menu> catalogList = listCatalog(menuList);
         // 获取目录下的子菜单
@@ -66,38 +66,38 @@ public class MenuServiceImpl extends ServiceImpl<MenuDao, Menu> implements MenuS
      * @param catalogList 目录
      * @param childrenMap 子菜单
      */
-    private List<UserMenuDTO> convertUserMenuList(List<Menu> catalogList, Map<Integer, List<Menu>> childrenMap) {
+    private List<UserMenuVO> convertUserMenuList(List<Menu> catalogList, Map<Integer, List<Menu>> childrenMap) {
         return catalogList.stream().map(item -> {
             // 获取目录
-            UserMenuDTO userMenuDTO = new UserMenuDTO();
-            List<UserMenuDTO> list = new ArrayList<>();
+            UserMenuVO userMenuVO = new UserMenuVO();
+            List<UserMenuVO> list = new ArrayList<>();
             // 获取目录下的子菜单
             List<Menu> children = childrenMap.get(item.getId());
             if (CollectionUtils.isNotEmpty(children)) {
                 // 多级菜单处理
-                userMenuDTO = BeanCopyUtils.copyObject(item, UserMenuDTO.class);
+                userMenuVO = BeanCopyUtils.copyObject(item, UserMenuVO.class);
                 list = children.stream()
                         .sorted(Comparator.comparing(Menu::getOrderNum))
                         .map(menu -> {
-                            UserMenuDTO dto = BeanCopyUtils.copyObject(menu, UserMenuDTO.class);
+                            UserMenuVO dto = BeanCopyUtils.copyObject(menu, UserMenuVO.class);
                             dto.setHidden(menu.getIsHidden().equals(1));
                             return dto;
                         })
                         .collect(Collectors.toList());
             } else {
                 // 一级菜单处理
-                userMenuDTO.setPath(item.getPath());
-                userMenuDTO.setComponent("Layout");
-                list.add(UserMenuDTO.builder()
+                userMenuVO.setPath(item.getPath());
+                userMenuVO.setComponent("Layout");
+                list.add(UserMenuVO.builder()
                         .path("")
                         .name(item.getName())
                         .icon(item.getIcon())
                         .component(item.getComponent())
                         .build());
             }
-            userMenuDTO.setHidden(item.getIsHidden().equals(1));
-            userMenuDTO.setChildren(list);
-            return userMenuDTO;
+            userMenuVO.setHidden(item.getIsHidden().equals(1));
+            userMenuVO.setChildren(list);
+            return userMenuVO;
         }).collect(Collectors.toList());
     }
 

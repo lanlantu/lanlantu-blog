@@ -1,7 +1,7 @@
 package com.lanlantu.blog.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lanlantu.blog.dto.UserMenuDTO;
+import com.lanlantu.blog.vo.UserMenuVO;
 import com.lanlantu.blog.entity.Menu;
 
 import java.util.List;
@@ -16,6 +16,6 @@ public interface MenuService extends IService<Menu> {
      *
      * @return 菜单列表
      */
-    List<UserMenuDTO> listUserMenus();
+    List<UserMenuVO> listUserMenus();
 
 }

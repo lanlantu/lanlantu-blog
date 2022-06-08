@@ -2,8 +2,8 @@ package com.lanlantu.blog.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lanlantu.blog.entity.OperationLog;
-import com.lanlantu.blog.vo.ConditionVO;
-import com.lanlantu.blog.vo.OperationLogDTO;
+import com.lanlantu.blog.dto.ConditionDTO;
+import com.lanlantu.blog.vo.OperationLogVO;
 import com.lanlantu.blog.vo.PageResult;
 
 /**
@@ -16,9 +16,9 @@ public interface OperationLogService extends IService<OperationLog> {
     /**
      * 查询日志列表
      *
-     * @param conditionVO 条件
+     * @param conditionDTO 条件
      * @return 日志列表
      */
-    PageResult<OperationLogDTO> listOperationLogs(ConditionVO conditionVO);
+    PageResult<OperationLogVO> listOperationLogs(ConditionDTO conditionDTO);
 
 }

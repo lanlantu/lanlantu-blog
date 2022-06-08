@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class OperationLogDTO {
+public class OperationLogVO {
     /**
      * 日志id
      */

@@ -7,14 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-/**
- * 菜单
- *
- * @author yezhiqiu
- * @date 2021/08/10
- */
+
 @Repository
-public interface MenuDao extends BaseMapper<Menu> {
+public interface MenuMapper extends BaseMapper<Menu> {
 
     /**
      * 根据用户id查询菜单

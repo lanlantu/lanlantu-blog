@@ -1,8 +1,8 @@
 package com.lanlantu.blog.controller;
 
 import com.lanlantu.blog.service.OperationLogService;
-import com.lanlantu.blog.vo.ConditionVO;
-import com.lanlantu.blog.vo.OperationLogDTO;
+import com.lanlantu.blog.dto.ConditionDTO;
+import com.lanlantu.blog.vo.OperationLogVO;
 import com.lanlantu.blog.vo.PageResult;
 import com.lanlantu.blog.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +26,12 @@ public class LogController {
     /**
      * 查看操作日志
      *
-     * @param conditionVO 条件
-     * @return {@link Result<OperationLogDTO>} 日志列表
+     * @param conditionDTO 条件
+     * @return {@link Result< OperationLogVO >} 日志列表
      */
     @GetMapping("/admin/operation/logs")
-    public Result<PageResult<OperationLogDTO>> listOperationLogs(ConditionVO conditionVO) {
-        return Result.ok(operationLogService.listOperationLogs(conditionVO));
+    public Result<PageResult<OperationLogVO>> listOperationLogs(ConditionDTO conditionDTO) {
+        return Result.ok(operationLogService.listOperationLogs(conditionDTO));
     }
 
     /**

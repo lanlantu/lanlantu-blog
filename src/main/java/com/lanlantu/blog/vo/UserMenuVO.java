@@ -1,4 +1,4 @@
-package com.lanlantu.blog.dto;
+package com.lanlantu.blog.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserMenuDTO {
+public class UserMenuVO {
 
     /**
      * 菜单名
@@ -42,6 +42,6 @@ public class UserMenuDTO {
     /**
      * 子菜单列表
      */
-    private List<UserMenuDTO> children;
+    private List<UserMenuVO> children;
 
 }

@@ -1,6 +1,8 @@
 package com.lanlantu.blog.util;
 
 import com.lanlantu.blog.dto.UserDetailDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +17,6 @@ public class UserUtils {
      * @return 用户登录信息
      */
     public static UserDetailDTO getLoginUser() {
-        System.out.println("======="+SecurityContextHolder.getContext());
         return (UserDetailDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 

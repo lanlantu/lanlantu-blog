@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
-//public static final Logger log =LoggerFactory.getLogger(LoginController.class);
-
     @ApiOperation(value = "主页")
     @GetMapping("/zhuye")
     public String login(){
