@@ -45,6 +45,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
         return menuList.stream()
                 .filter(item -> Objects.isNull(item.getParentId()))
                 .sorted(Comparator.comparing(Menu::getOrderNum))
+
                 .collect(Collectors.toList());
     }
 
